@@ -44,7 +44,7 @@ st.write(
     "This app checks whether today's air and water temperatures are safe for rowing "
     "using the **combined temperature rule** — add air + water (in °F). "
     "Below **100 °F combined (≈ 38 °C total)**: exercise caution. "
-    "Below **90 °F combined (≈ 32 °C total)**: life jacket and minimum a double on the water."
+    "Below **90 °F combined (≈ 32 °C total)**: life jacket (PFD) and minimum four oars (2x) on the water."
 )
 
 now = datetime.now(TZ)
@@ -97,7 +97,7 @@ combined_f  = air_f + water_avg_f
 if combined_f < 90:
     st.error(
         f"**⛔ Cold water rules in effect — {combined_f:.1f} °F combined**\n\n"
-        f"Life jacket (flytväst) required · Minimum a double on the water · No single sculling"
+        f"Life jacket (PFD) recommended · Minimum four oars (2x) on the water · No single sculling"
     )
 elif combined_f < 100:
     st.warning(
@@ -124,6 +124,21 @@ and strength within 3–5 minutes, even in fit rowers who feel mentally alert.
 Hypothermia (a drop in core body temperature) comes last, but by then you may
 already be unable to swim.
 
+Safety experts often use the 1-10-1 rule to explain the phases of cold water immersion:
+
+1 Minute: You have roughly sixty seconds to get your breathing under control. If you
+don't panic and keep your head up, the "cold shock" phase will pass.
+
+10 Minutes: You have about ten minutes of "meaningful movement." After this, your nerves 
+and muscles in your extremities get too cold to work, and you lose the ability to swim or 
+grip a life ring (cold incapacitation).
+
+1 Hour: It typically takes at least an hour before you lose consciousness due to hypothermia.
+
+#### Pro Tip: This is why life jackets are so critical in cold water.
+They keep your head above the surface during that first uncontrollable minute so that when
+you gasp, you're inhaling air, not the lake.
+
 #### The combined temperature rule
 
 The rule was developed by USRowing (USA) as a practical field check: add the current
@@ -134,14 +149,14 @@ how much cold stress your body faces if you end up in the water.
 |---|---|---|
 | **100 °F or above** (≈ 38 °C total) | Safe for normal rowing | Nothing extra |
 | **90–99 °F** (≈ 32–37 °C total) | Caution zone | Row carefully, stay near shore |
-| **Below 90 °F** (≈ below 32 °C total) | Cold water rules apply | Life jacket + min. a double |
+| **Below 90 °F** (≈ below 32 °C total) | Cold water rules apply | Life jacket + min. a 2x |
 
 *Why Fahrenheit?* The rule was designed in °F, which gives more useful granularity
 in the cold range. The thresholds feel arbitrary in Celsius, but the underlying
 safety logic is sound. 100 °F combined (e.g. air 10 °C + water 11 °C) is roughly
 the boundary where a short unplanned swim is survivable with reasonable fitness.
 
-#### The four-oar rule (minimum a double)
+#### The four-oar rule (minimum a 2x)
 
 Below 90 °F combined, **no single sculling**. The smallest safe boat is a double —
 so that if one rower capsizes, the other can assist and call for help. In practice:
@@ -149,7 +164,7 @@ no 1x, no sculling alone off a dock.
 
 #### Life jacket (flytväst)
 
-Below 90 °F combined, a life jacket must be **worn**, not just carried on board.
+Below 90 °F combined, a life jacket should be **worn**, not just carried on board.
 A conscious swimmer in cold water loses effective arm movement within minutes.
 A life jacket keeps an incapacitated rower afloat without any effort on their part.
 An inflatable belt-style PFD (the thin kind worn around the waist) counts —
