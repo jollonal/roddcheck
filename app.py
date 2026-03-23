@@ -38,13 +38,13 @@ st.set_page_config(
 
 # ── Header ────────────────────────────────────────────────────────────────────
 
-st.title("🚣 Roddcheck Stockholm")
+st.title("🚣 Roddcheck Stockholm 🥶")
 st.write(
     "Cold water is dangerous long before you feel cold. "
     "This app checks whether today's air and water temperatures are safe for rowing "
     "using the **combined temperature rule** — add air + water (in °F). "
     "Below **100 °F combined (≈ 38 °C total)**: exercise caution. "
-    "Below **90 °F combined (≈ 32 °C total)**: life jacket (PFD) and minimum four oars (2x) on the water."
+    "Below **90 °F combined (≈ 32 °C total)**: wear a life jacket (PFD) and row with a minimum of four oars (2x) on the water."
 )
 
 now = datetime.now(TZ)
