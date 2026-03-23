@@ -124,6 +124,8 @@ and strength within 3–5 minutes, even in fit rowers who feel mentally alert.
 Hypothermia (a drop in core body temperature) comes last, but by then you may
 already be unable to swim.
 
+#### The "1-10-1" Rule
+
 Safety experts often use the 1-10-1 rule to explain the phases of cold water immersion:
 
 1 Minute: You have roughly sixty seconds to get your breathing under control. If you
