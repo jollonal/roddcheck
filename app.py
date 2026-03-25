@@ -54,7 +54,7 @@ if is_winter_period(datetime.now(TZ).date()):
         "- **Exception:** experienced competitive rowers may row in the canal "
         "without a safety launch\n"
         "- **Life jackets:** should be worn on all winter rows "
-        "and longer outings (§14)"
+        "and longer outings"
     )
 
 # ── Header ────────────────────────────────────────────────────────────────────
