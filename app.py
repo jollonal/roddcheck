@@ -43,8 +43,8 @@ st.write(
     "Cold water is dangerous long before you feel cold. "
     "This app checks whether today's air and water temperatures are safe for rowing "
     "using the **combined temperature rule** — add air + water (in °F). "
-    "Below **100 °F combined (≈ 38 °C total)**: exercise caution. "
-    "Below **90 °F combined (≈ 32 °C total)**: wear a life jacket (PFD) and row with a minimum of four oars (2x) on the water."
+    "Below **100 °F combined (≈ 20 °C total)**: exercise caution. "
+    "Below **90 °F combined (≈ 14 °C total)**: wear a life jacket (PFD) and row with a minimum of four oars (2x) on the water."
 )
 
 now = datetime.now(TZ)
@@ -91,23 +91,26 @@ water_avg_c = sum(available) / len(available)
 water_avg_f = c_to_f(water_avg_c)
 air_f       = c_to_f(air_c)
 combined_f  = air_f + water_avg_f
+combined_c  = air_c + water_avg_c   # metric equivalent: sum of individual °C readings
 
 # ── Verdict ───────────────────────────────────────────────────────────────────
 
 if combined_f < 90:
     st.error(
-        f"**⛔ Cold water rules in effect — {combined_f:.1f} °F combined**\n\n"
-        f"Life jacket (PFD) recommended · Minimum four oars (2x) on the water · No single sculling"
+        f"Combined air + water: **{combined_f:.1f} °F ({combined_c:.1f} °C) < 90 °F**\n\n"
+        f"⛔ Cold water rules in effect when combined < 90 °F\n\n"
+        f"Life jacket (PFD) required · Minimum four oars (2x) on the water · No single sculling"
     )
 elif combined_f < 100:
     st.warning(
-        f"**⚠️ Caution — {combined_f:.1f} °F combined**\n\n"
-        f"Below the 100 °F threshold. Row with extra care and stay close to shore."
+        f"Combined air + water: **{combined_f:.1f} °F ({combined_c:.1f} °C) < 100 °F**\n\n"
+        f"⚠️ Caution required when combined < 100 °F\n\n"
+        f"Row with extra care and stay close to shore."
     )
 else:
     st.success(
-        f"**✅ Good to go — {combined_f:.1f} °F combined**\n\n"
-        f"Combined temperature is above 100 °F. Normal rowing conditions."
+        f"Combined air + water: **{combined_f:.1f} °F ({combined_c:.1f} °C) ≥ 100 °F**\n\n"
+        f"✅ Good to go — normal rowing conditions."
     )
 
 # ── Safety rules explainer ────────────────────────────────────────────────────
@@ -149,9 +152,9 @@ how much cold stress your body faces if you end up in the water.
 
 | Combined temp | Conditions | What's required |
 |---|---|---|
-| **100 °F or above** (≈ 38 °C total) | Safe for normal rowing | Nothing extra |
-| **90–99 °F** (≈ 32–37 °C total) | Caution zone | Row carefully, stay near shore |
-| **Below 90 °F** (≈ below 32 °C total) | Cold water rules apply | Life jacket + min. a 2x |
+| **100 °F or above** (≈ 20 °C total) | Safe for normal rowing | Nothing extra |
+| **90–99 °F** (≈ 14–19 °C total) | Caution zone | Row carefully, stay near shore |
+| **Below 90 °F** (≈ below 14 °C total) | Cold water rules apply | Life jacket + min. a 2x |
 
 *Why Fahrenheit?* The rule was designed in °F, which gives more useful granularity
 in the cold range. The thresholds feel arbitrary in Celsius, but the underlying
