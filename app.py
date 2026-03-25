@@ -36,6 +36,27 @@ st.set_page_config(
     layout="centered",
 )
 
+# ── Winter regulations banner ─────────────────────────────────────────────────
+
+def is_winter_period(d) -> bool:
+    """True if date falls within the SR winter rowing period (15 Nov – 15 Apr)."""
+    m, day = d.month, d.day
+    return (m == 11 and day >= 15) or m == 12 or (1 <= m <= 3) or (m == 4 and day <= 15)
+
+if is_winter_period(datetime.now(TZ).date()):
+    st.error(
+        "❄️ **WINTER REGULATIONS IN EFFECT — 15 Nov to 15 Apr** "
+        "(Stockholms Roddförening, §13–14)\n\n"
+        "- **Singles (1x) and coxless doubles/pairs (2-):** prohibited without a "
+        "safety launch (*följebåt*)\n"
+        "- **All other boats:** safety launch required if rowing outside "
+        "Lilla Sjötullsbron or Djurgårdsbron\n"
+        "- **Exception:** experienced competitive rowers may row in the canal "
+        "without a safety launch\n"
+        "- **Life jackets (flytväst):** should be worn on all winter rows "
+        "and longer outings (§14)"
+    )
+
 # ── Header ────────────────────────────────────────────────────────────────────
 
 st.title("🚣 Roddcheck Stockholm 🥶")
