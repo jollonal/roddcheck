@@ -46,14 +46,13 @@ def is_winter_period(d) -> bool:
 if is_winter_period(datetime.now(TZ).date()):
     st.error(
         "❄️ **WINTER REGULATIONS IN EFFECT — 15 Nov to 15 Apr** "
-        "(Stockholms Roddförening, §13–14)\n\n"
-        "- **Singles (1x) and coxless doubles/pairs (2-):** prohibited without a "
+        "- **Singles (1x) and coxless doubles (2x)/pairs (2-):** prohibited without a "
         "safety launch (*följebåt*)\n"
         "- **All other boats:** safety launch required if rowing outside "
         "Lilla Sjötullsbron or Djurgårdsbron\n"
         "- **Exception:** experienced competitive rowers may row in the canal "
         "without a safety launch\n"
-        "- **Life jackets (flytväst):** should be worn on all winter rows "
+        "- **Life jackets:** should be worn on all winter rows "
         "and longer outings (§14)"
     )
 
