@@ -36,6 +36,10 @@ st.set_page_config(
     layout="centered",
 )
 
+# ── Header ────────────────────────────────────────────────────────────────────
+
+st.title("🚣 Roddcheck Stockholm 🥶")
+
 # ── Winter regulations banner ─────────────────────────────────────────────────
 
 def is_winter_period(d) -> bool:
@@ -57,9 +61,6 @@ if is_winter_period(datetime.now(TZ).date()):
         "and longer outings"
     )
 
-# ── Header ────────────────────────────────────────────────────────────────────
-
-st.title("🚣 Roddcheck Stockholm 🥶")
 st.write(
     "Cold water is dangerous long before you feel cold. "
     "This app checks whether today's air and water temperatures are safe for rowing "
