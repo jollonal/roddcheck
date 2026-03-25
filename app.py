@@ -46,6 +46,7 @@ def is_winter_period(d) -> bool:
 if is_winter_period(datetime.now(TZ).date()):
     st.error(
         "❄️ **WINTER REGULATIONS IN EFFECT — 15 Nov to 15 Apr** "
+        " \n\n"
         "- **Singles (1x) and coxless doubles (2x)/pairs (2-):** prohibited without a "
         "safety launch (*följebåt*)\n"
         "- **All other boats:** safety launch required if rowing outside "
